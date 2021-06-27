@@ -42,9 +42,9 @@
 
 %-------------------------
 % Custom commands
-\newcommand{\resumeItem}[2]{
+\newcommand{\resumeItem}[1]{
   \item\small{
-    \textbf{#1}{: #2 \vspace{-2pt}}
+    {#1 \vspace{-2pt}}
   }
 }
 
@@ -56,24 +56,20 @@
     \end{tabular*}\vspace{-5pt}
 }
 
-\newcommand{\resumeSubheading}[4]{%
-% \vspace{-1pt}%
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt} % space at top
   \item
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & #2 \\
-      \textit{\small#3} & \textit{\small #4} \\
+      \textbf{#1}. #2 & \textit{\small#4} \\
+       {\small #3} \\
 
-    \end{tabular*}%
-%   \vspace{-5pt}
+    \end{tabular*}
+    \vspace{-5pt}
 }
 
-\newcommand{\resumeSubSubheading}[2]{
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \textit{\small#1} & \textit{\small #2} \\
-    \end{tabular*}\vspace{-5pt}
-}
+ 
 
-\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}\vspace{-4pt}}
 
 \renewcommand{\labelitemii}{$\circ$}
 
@@ -103,38 +99,26 @@
     \resumeSubheading
       {Atonix}{Overland Park, KS}
       {Senior Software Engineer}{July 2020 - Present. June 2018 - May 2019 }
-      {Software startup that is a spinout of Black \& Veatch, a global engineering company.}
-
+  
       \resumeItemListStart
- 
-        \resumeItem{Angular - .NET Core - AWS Lambda - AWS Cloudfront - New Relic}
-          {Leading the migration of a large 5 million+ lines of code legacy AngularJS and .NET Framework application into AWS Lambda Containers, .NET Core, and Angular. CI setup with Azure Devops for multiple angular applications and containers. }
-          \resumeItem{AWS Cognito - Angular - .NET Core - Lambda}
-          {Used AWS Cognito for a customized Federated login experience and user authentication.}
-          \resumeItem{InfluxDB - .NET Core - Angular - d3.js}
+        \resumeItem 
+          {   Software startup that is a spinout of Black \& Veatch, a global engineering company. Leading the migration of a large 5 million+ lines of code legacy AngularJS and .NET Framework application into AWS Lambda Containers, .NET Core, and Angular. CI setup with Azure Devops for multiple angular applications and containers. }
+          \resumeItem 
+          {Migration of user authentication to AWS Cognito for integration with external identity providers (SAML).}
+          \resumeItem 
           {Data Explorer. An interactive application for exploring alerts data and saving data visuzalizations. Built with Reactive Architecture - streams handle channels of communications for events, and react to each event.  }
       \resumeItemListEnd
       
-% --------Multiple Positions Heading------------
-%    \resumeSubSubheading
-%     {Software Engineer I}{Oct 2014 - Sep 2016}
-%     \resumeItemListStart
-%        \resumeItem{Apache Beam}
-%          {Apache Beam is a unified model for defining both batch and streaming data-parallel processing pipelines}
-%     \resumeItemListEnd
-%    \resumeSubHeadingListEnd
-%-------------------------------------------
-
     \resumeSubheading
       {Daupler}{Kansas City, MO}
       {Lead Software Engineer}{Sep 2019 - Aug 2020}
-      { Techstars Kansas City Cohort }
+ 
       \resumeItemListStart
-        \resumeItem{Pytorch - Flask - Pytorch Serve - Postgresql - AWS ECS }
-          {Designed classification method with Distilbert and Pytorch for labelling call descriptions }
-        \resumeItem{Django - Angular - Postgresql -  Google Maps}
+        \resumeItem 
+          {Techstars Kansas City Cohort. Designed classification method with Distilbert and Pytorch for labelling call descriptions. Classified if a call was for water or sewage, police, traffic, and if call was an emergency or not. Integrated with a front-end website so a human operator would be flagged if something was deemed an emergency, or the user could classify a call as an emergency (Human Assisted AI) }
+        \resumeItem 
           {Designed Call Center application for taking city calls for water, sewer, and city services in Oakland, Durham, and other cities. Used the classification algorithm to route the call to the appropriate city department. }
-        \resumeItem{Django - Angular - Postgresql - Mapbox GL JS - Twilio - AWS ECS}
+        \resumeItem 
           {City Texting Utility. Users could select city regions by drawing polygons or selecting water system pressure zone or storm drainage basin on a map to send mass texts for boil orders, etc.}
       \resumeItemListEnd
 
@@ -143,8 +127,8 @@
       {symplr - Healthcare Compliance + Credentialing}{Overland Park, KS}
       {Lead Software Engineer}{May 2019 - Sep 2019}
       \resumeItemListStart
-        \resumeItem{Node JS - Angular - .NET Core - Kubernetes - Kafka }
-          {Led a nearshore team to deliver SaaS application for the automation of pdf form filling of provider data. }
+        \resumeItem 
+          {Led a nearshore team to deliver SaaS application for the automation of pdf form filling of provider data. Used a microservice architecture with NodeJS, .NET Core and Kafka running on Kubernetes designed by Ben Capps (Stackify).  }
       \resumeItemListEnd
 
  
@@ -152,7 +136,7 @@
       {University of Kansas}{Overland Park, KS}
       {Data Analytics Instructor - Night Class }{Nov 2017 - Jun 2018}
       \resumeItemListStart
-        \resumeItem{Python}
+        \resumeItem 
         { Evening instructor for the Data Analytics Bootcamp at KU. It was a hands-on curriculum of Spark2, SQL, Python, Pandas, Scikit-learn, and Flask }
       \resumeItemListEnd
 
@@ -160,27 +144,36 @@
       {Homer Energy}{Boulder, CO}
       {Senior Software Engineer}{Aug 2013 - Sep 2018}
       \resumeItemListStart
-        \resumeItem{Python - C++ - Angular - .NET - Azure }
+        \resumeItem 
           { Started working there when it was a small startup. Successful exit to Underwriters Laboratories (UL). We took the core National Renewable Energy Laboratory algorithms for microgrid design, modernized them, and made the core decisions available through a Python / Matlab SDK so that researchers at ABB, Siemens, US Navy, and UL could interface with them. Also made an easy to use web or desktop interface using the same core code base. }
       \resumeItemListEnd
      
- 
-
+      \resumeSubheading
+      {RBC Medical Innovations}{Lenexa, KS}
+      {Embedded Software Engineer}{Oct 2012 - Aug 2013}
+      \resumeItemListStart
+        \resumeItem 
+          { Member of software development team for FDA Class III life-saving medical device, the Philips V680 ventilator. }
+          { Developed iPad app with Bluetooth LE connectivity to medical device. }
+      \resumeItemListEnd
+      
   \resumeSubHeadingListEnd
 
 
 % %-----------PROJECTS-----------------
-% \section{Projects}
-%   \resumeSubHeadingListStart
-%     \resumeSubItem{QuantSoftware Toolkit}
-%       {Open source python library for financial data analysis and machine learning for finance.}
-%     \resumeSubItem{Github Visualization}
-%       {Data Visualization of Git Log data using D3 to analyze project trends over time.}
-%     \resumeSubItem{Recommendation System}
-%       {Music and Movie recommender systems using collaborative filtering on public datasets.}
-%     \resumeSubItem{Mac Setup}
-%       {Book that gives step by step instructions on setting up developer environment on Mac OS.}
-%   \resumeSubHeadingListEnd
+\section{Programming Skills}
+  \resumeSubHeadingListStart
+
+   \item{
+     \textbf{Preferred Languages and Databases }{: Python, Javascript, Typescript, SQL Server, PostgreSQL }
+
+   }
+   \item{
+    \textbf{Frameworks}{: Django, FastAPI, React, Angular, Flutter }
+
+  }
+ 
+  \resumeSubHeadingListEnd
 
 
   %-----------EDUCATION-----------------
@@ -199,7 +192,7 @@
 
 %
 %--------PROGRAMMING SKILLS------------
-%\section{Programming Skills}
+% \section{Programming Skills}
 %  \resumeSubHeadingListStart
 %    \item{
 %      \textbf{Languages}{: Scala, Python, Javascript, C++, SQL, Java}
